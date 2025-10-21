@@ -1,0 +1,20 @@
+{
+    "asset": "8bce3bc4460e30c43a0cd3c7a2d7a2b4",
+    "fileName": "0199f97f-eec0-74aa-b921-f084eb6f1bb7.png",
+    "prompt": "A cenital view of a futuristic distopic city background",
+    "negativePrompt": "",
+    "model": "94c4260f-b988-40e7-b3d3-435b9f449bd0",
+    "modelName": "Flux.1 Dev",
+    "customSeed": -1,
+    "w3CTraceId": "2dbc6e5df9d7edbabab8c035e8474cfa",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

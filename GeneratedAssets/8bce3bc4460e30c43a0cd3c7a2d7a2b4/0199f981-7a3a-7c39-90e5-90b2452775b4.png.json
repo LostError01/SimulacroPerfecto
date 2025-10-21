@@ -1,0 +1,20 @@
+{
+    "asset": "8bce3bc4460e30c43a0cd3c7a2d7a2b4",
+    "fileName": "0199f981-7a3a-7c39-90e5-90b2452775b4.png",
+    "prompt": "A isometric shot of a street of a futuristic distopic city",
+    "negativePrompt": "",
+    "model": "b91fcf71-f4cf-43cb-ba1e-1f22a1296e46",
+    "modelName": "8-bit Pixel",
+    "customSeed": -1,
+    "w3CTraceId": "11d3d151ec35ee91046910f992754cd9",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

@@ -1,0 +1,29 @@
+{
+    "asset": "8bce3bc4460e30c43a0cd3c7a2d7a2b4",
+    "fileName": "0199f98a-7493-7ce1-bd9e-5b00dd8afabe.png",
+    "prompt": "A aerial view of a lonely street of a futuristic distopic city, dark and red colors. Night",
+    "negativePrompt": "no cars, no people",
+    "model": "242b56c1-2224-41c4-8949-2ba760bbfc69",
+    "modelName": "16-bit Pixel",
+    "customSeed": -1,
+    "w3CTraceId": "72719fe4491cd42a640da4627538d956",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "8df7a3c480fdb2d49b6726723edfbd17"
+            }
+        ]
+    },
+    "upscaleFactor": 0
+}
