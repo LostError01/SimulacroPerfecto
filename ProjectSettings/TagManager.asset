@@ -5,14 +5,17 @@ TagManager:
   serializedVersion: 3
   tags:
   - CityLimits
+  - ColisionPared
+  - Meta
+  - NPC
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Paredes
   - Water
   - UI
-  - 
+  - NPC
   - 
   - 
   - 
