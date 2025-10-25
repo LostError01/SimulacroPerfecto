@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPCBehavior : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class NPCBehavior : MonoBehaviour
 
     [Header("VariablesNPC")]
     private int reputacionNPC = 0;
+    private Text Puntaje;
 
     private Vector2 currentDirection;
     private float timer;
@@ -41,18 +43,23 @@ public class NPCBehavior : MonoBehaviour
         hasReachedGoal = false;
 
         reputacionNPC = Random.Range(0, 100); // Valor entre 0 y 100
+
+        Puntaje = GetComponentInChildren<Text>();
+        Puntaje.text = reputacionNPC.ToString();
     }
 
     void Update()
     {
         //Si la reputacion es igual o menor a 40, el npc es de color rojo, si es mayor, verde
-        if(reputacionNPC<=20)
+        if (reputacionNPC <= 20)
         {
             GetComponent<SpriteRenderer>().color = Color.red;
+            Puntaje.color = Color.red;
         }
         else
         {
             GetComponent<SpriteRenderer>().color = Color.green;
+            Puntaje.color = Color.green;
         }
 
         goalTimer += Time.deltaTime;
@@ -91,7 +98,7 @@ public class NPCBehavior : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0)) // Botón izquierdo
+        if (Input.GetMouseButtonDown(0)) // Apretar el click izquierdo
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
@@ -101,10 +108,15 @@ public class NPCBehavior : MonoBehaviour
                 if(reputacionNPC <= 20)
                 {
                     Debug.Log("NPC Eliminado correcto");
+                    if(NPCGenerator.SliderValueNPC > 0)
+                    {
+                        NPCGenerator.SliderValueNPC -= 3; // Disminuir el valor del slider en 10
+                    }
                 }
                 else
                 {
                     Debug.Log("NPC Eliminado incorrecto");
+                    NPCGenerator.SliderValueNPC += 5; // Aumentar el valor del slider en 10
                 }
                 Destroy(gameObject);
             }
@@ -217,11 +229,14 @@ public class NPCBehavior : MonoBehaviour
         {
             hasReachedGoal = true;
             rb.linearVelocity = Vector2.zero;
-            Debug.Log("¡NPC ha llegado a la meta!");
         }
 
         if(other.CompareTag("CityLimits"))
         {
+            if (reputacionNPC <= 20)
+            {
+                NPCGenerator.SliderValueNPC += 5; // Aumentar el valor del slider en 5
+            }
             Destroy(gameObject);
         }
     }

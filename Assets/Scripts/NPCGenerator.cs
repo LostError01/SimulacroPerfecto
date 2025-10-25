@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class NPCGenerator : MonoBehaviour
 {
@@ -22,8 +23,13 @@ public class NPCGenerator : MonoBehaviour
     [Tooltip("Número máximo de NPCs a generar (solo si limitedSpawns está activo)")]
     public int maxSpawns = 10;
 
+    [Header("Variables del Slider")]
+    private Slider reputacionSlider;
+
     private int currentSpawnCount = 0;
     private bool isSpawning = true;
+
+    public static int SliderValueNPC = 0;
 
     void Start()
     {
@@ -34,7 +40,31 @@ public class NPCGenerator : MonoBehaviour
             return;
         }
 
+        //Encontrar el Slider con el nombre
+        reputacionSlider = GameObject.Find("BarraDeMalestar").GetComponent<Slider>();
+
+        // Configurar el slider de reputación
+        if (reputacionSlider != null)
+        {
+            reputacionSlider.minValue = 0;
+            reputacionSlider.maxValue = 100;
+            reputacionSlider.value = 0;
+        }
+
         StartCoroutine(SpawnRoutine());
+    }
+
+    void Update()
+    {
+        //Evitar que el valor del Slider sea menor a 0
+        if (reputacionSlider.value < 0)
+        {
+            reputacionSlider.value = 0;
+        }
+        else
+        {
+            reputacionSlider.value = SliderValueNPC;
+        }
     }
 
     IEnumerator SpawnRoutine()
